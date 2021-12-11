@@ -7,15 +7,11 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
 
 class BinanceConnector:
-    socket = 'wss://stream.binance.com:9443/ws'
-    btcusdt_candlesticks = list()
-    ethusdt_candlesticks = list()
-    bnbbtc_candlesticks = list()
-
     def __init__(self):
-        btcusdt_candlesticks = list()
-        ethusdt_candlesticks = list()
-        bnbbtc_candlesticks = list()
+        self.socket = 'wss://stream.binance.com:9443/ws'
+        self.btcusdt_candlesticks = list()
+        self.ethusdt_candlesticks = list()
+        self.bnbbtc_candlesticks = list()
 
     # Subscribing to binance receive the required minute candlesticks for pairs
     def on_open(self, ws):
